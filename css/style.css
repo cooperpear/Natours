@@ -144,6 +144,20 @@ body {
     }
 }
 
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 /* Button styling */
 
 .btn:link,
@@ -173,8 +187,9 @@ body {
     color: #777;
 }
 
-.discover-button {
+.button-animated {
     animation: fadeIn 8s ease-out;
+    /* animation: moveInBottom 4s ease-out; */
 }
 
 .btn:after {
@@ -187,6 +202,7 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
+    transition: all .4s;
 }
 
 .btn-white::after {
@@ -194,5 +210,7 @@ body {
 }
 
 .btn:hover::after {
-    transform: scale(2);
+    transform: scaleX(1.2) scaleY(1.35);
+    /* trick for fading out button in opacity */
+    opacity: 0;
 }
