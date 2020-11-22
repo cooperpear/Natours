@@ -1,0 +1,23 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Uses BEM model- Block Element Modifier for CSS architecture",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cooperpear/Natours.git"
+  },
+  "author": "Cooper Pearson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cooperpear/Natours/issues"
+  },
+  "homepage": "https://github.com/cooperpear/Natours#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  },
+  "dependencies": {}
+}
