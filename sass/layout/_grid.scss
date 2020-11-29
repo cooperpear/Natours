@@ -11,7 +11,7 @@
     @include clearfix;
 
     //Select all things with the attribute "class begins with the characters col-"
-    [class^= "col-"] {
+    [class^="col-"] {
         float: left;
 
         &:not(:last-child) {
