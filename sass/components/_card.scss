@@ -10,7 +10,7 @@
     &__side {
         background-color: orangered;
         height: 50rem;
-        //transition timing: ease this is important for fluidity
+        //transition timing: ease  -- this is important for fluidity
         transition: all .8s ease;
         position: absolute;
         top: 0;
@@ -18,6 +18,8 @@
         width: 100%;
         //hides the back part of an element when rotating
         backface-visibility: hidden;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
         &--front {
             background-color: $color-white;
