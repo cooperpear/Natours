@@ -6,11 +6,11 @@
     //support for mozilla firefox browsers
     -moz-perspective: 150rem;
     position: relative;
-    height: 50rem;
+    height: 52rem;
 
     &__side {
         background-color: orangered;
-        height: 50rem;
+        height: 52rem;
         //transition timing: ease  -- this is important for fluidity
         transition: all .8s ease;
         position: absolute;
@@ -94,4 +94,27 @@
                 rgba($color-secondary-dark, .85));
             }
     }
+
+    &__details {
+        padding: 3rem;
+
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+            
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+    
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-grey-light-2;
+                }
+ 
+            }
+
+        }
+    }
+
 }
