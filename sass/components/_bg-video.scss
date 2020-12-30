@@ -6,4 +6,11 @@
     width: 100%;
     z-index: -1;
     opacity: .15;
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        //works similar to background cover, but uses the html element instead of an image. maintains aspect ratio of video 
+        object-fit: cover;
+    }
 }
