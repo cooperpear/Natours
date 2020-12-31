@@ -62,11 +62,16 @@
         display: inline-block;
     }
 
+    //hides the radio button element after our custom style has been applied
+    &__radio-input {
+        display: none;
+    }
+
     &__radio-label {
         font-size: $default-font-size;
         cursor: pointer;
         position: relative;
-        padding-left: 5rem;
+        padding-left: 4.5rem;
     }
 
     &__radio-button {
@@ -77,11 +82,30 @@
         display: inline-block;
         position: absolute;
         left: 0;
-        top: -.1rem;
+        top: -.4rem;
 
         &::after {
+            //always set the content property of a pseudoelement to "empty"
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary;
+            opacity: 0;
+            transition: opacity .2s;
 
         }
+    }
+
+    //this is how we style custom radio buttons, and also custom check boxes
+    //as soon as we hit the label element, the radio element becomes checked. so we simply select the sibling element of the label element, then the child, because this is the one we want to change. 
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+        opacity: 1;
     }
 
 }

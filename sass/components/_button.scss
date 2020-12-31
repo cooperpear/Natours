@@ -1,6 +1,7 @@
 /* Button styling */
 
 .btn {
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -11,7 +12,11 @@
         /* this property animates the button "moves between the transform properties to create an even flow look" */
         transition: all .2s;
         position: relative;
-        font-size: 1.6rem;
+        font-size: $default-font-size;
+
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
     }
     
     &:hover {
@@ -25,7 +30,9 @@
         }
     }
     
-    &:active {
+    &:active,
+    &:focus {
+        outline: none;
         transform: translateY(-.1rem);
         box-shadow: 0 .5rem 1rem rgba($color-black,.2);
     }
