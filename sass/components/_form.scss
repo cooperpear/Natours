@@ -1,4 +1,5 @@
 .form {
+
     &__input {
         font-size: 1.5rem;
         font-family: inherit;
@@ -9,17 +10,26 @@
         border-bottom: 3px solid transparent;
         width: 90%;
         display: block;
-    }
+        color: inherit;
+        transition: all .3s;
 
-//this is important for accessibility. people without mouses need to know which element they are selecting. ADA
-&__input:focus {
-    outline: none;
-    box-shadow: 0 1rem 2rem rgba($color-black, .1);
-    border-bottom: 3px solid $color-primary;
-}
-//pseudo element. only works on safari and chrome 
-&::-webkit-input-placeholder {
-    
+        //this is important for accessibility. people without mouses need to know which element they are selecting. ADA
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $color-primary;
+        }
+
+
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary-dark;
+        }
+
+        //pseudo element. only works on safari and chrome 
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-2;
+        }
+
 }
 
 
@@ -32,7 +42,46 @@
     
 
     &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+    }
 
+    //adjacent sibling seletor "+" used here
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    &__radio-group {
+        width: 49%;
+        display: inline-block;
+    }
+
+    &__radio-label {
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 5rem;
+    }
+
+    &__radio-button {
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -.1rem;
+
+        &::after {
+
+        }
     }
 
 }
