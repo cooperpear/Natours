@@ -9,10 +9,27 @@
 }
 
 html {
-    //This defines what 1rem is for the page, can be used for ADA compliance. with this setting, 1 rem = 10 pixels
+    //This defines what 1rem is for the page, can be used for ADA compliance. with this setting, 1 rem = 10 pixels. 10px/16px(default font size)= 62.5%
     font-size: 62.5%;
+
+    @include respond (phone) {
+        font-size: 50%;
+    }
+    
+    @include respond (tab-port) {
+        font-size: 60%;
+    }
+    
+    @include respond (tab-land) {
+        font-size: 70%;
+    }
+    
+    @include respond (big-desktop) {
+        font-size: 80%;
+    }
 }
 
 body {
     box-sizing: border-box;
 }
+
